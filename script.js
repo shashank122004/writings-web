@@ -101,19 +101,6 @@ function typeWriter(element, text, delay = 30) {
     typing();
 }
 
-// let c=document.getElementById("closeBtn")
-// c.addEventListener("click",()=>{
-//     let x=document.getElementById('overlay');
-//     x.classList.remove('overlay');
-//     //toggle poem box
-//     let y=document.getElementById('poemBox');
-//     y.classList.remove('poemBox');
-//     let z=document.getElementById('poemContent');
-//     z.classList.add('erase');
-//     c.classList.add('close');
-//     location.reload(); //refresh after every exection
-// })
-
 const c = document.getElementById("closeBtn");
 
 c.addEventListener("click", () => {
