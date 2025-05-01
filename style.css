@@ -288,6 +288,18 @@ body.change
       border-radius: 2rem;
   }
 
+  .poemContent {
+    padding: 20px;
+    font-size: 25px;
+    color: black;
+    display: block;
+    overflow-x: hidden;  /* Hide horizontal scroll */
+    overflow-y: auto;    /* Allow vertical scroll only */
+    word-wrap: break-word; /* Ensure long words break */
+    width: 100%;
+    box-sizing: border-box;
+}
+
   .closeBtn {
       top: 10px;
       right: 20px;
