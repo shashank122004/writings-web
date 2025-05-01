@@ -1,0 +1,239 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    font-size:medium;
+    background-image:url("resources/concrete-wall-scratched-material-background-texture-concept.jpg"); 
+    /* background-color: black; */
+    background-size: cover; /* Cover entire screen */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent tiling */
+    color: white; /* Optional: text color to stand out */
+    overflow: auto;
+}
+
+body.change
+{
+    background-image:url("resources/orange-frame-paints-white-sheet.jpg"); 
+}
+
+
+.header {
+    position: relative;
+    text-align: center;
+    padding: 2rem;
+    background: transparent; /* or any background */
+  }
+  
+  .header h2 {
+    margin: 0;
+    font-size: 5rem;
+    color:black;
+  }
+  
+  .header h3 {
+    margin-top: 0.5rem;
+    font-weight: normal;
+    font-size: 2rem;
+    color: black;
+    font-style: italic;
+    text-decoration: underline;
+  }
+  
+  /* Position theme button in top-right */
+  .header .theme {
+    position: relative;
+    top: -10rem;
+    left: 46%;
+    padding: 0.5rem 1rem;
+    background: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+
+
+.hero
+{
+    justify-content: center;
+    align-items: center;
+}
+.hero .quote {
+    position: relative;
+    top:0;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 500;
+    text-align: center;
+    padding: 1rem;
+    margin: 0rem auto;
+    max-width: 80%;
+    /* border-left: 4px solid white;
+    border-right: 4px solid white; */
+    color: black;
+    /* background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3); 
+    transition: all 0.3s ease-in-out; 
+  }
+/* .quote.change
+{
+    color:rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0,0);
+}   */
+
+
+/* hindi block */
+.panel {
+    background-color: rgba(0, 0, 0, 0); /* Semi-transparent background */
+    border-radius: 20px;
+    padding: 1rem;
+    margin-top: 2rem;
+    width: 300px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    position:relative;
+    top:2rem;
+    left:18%;
+}
+
+.panel ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.panel li {
+    margin: 10px 0;
+}
+
+.panel a {
+    text-decoration: none;
+    color: black;
+    font-size: 2rem;
+    transition: color 0.3s;
+}
+
+.panel a:hover {
+    color: #a88204; /* Gold color on hover */
+}
+
+.panel2 {
+    background-color: rgba(0, 0, 0, 0); /* Semi-transparent background */
+    border-radius: 20px;
+    padding: 1rem;
+    margin-top: 2rem;
+    width: 300px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    top:-31rem;
+    left:60%;
+    justify-content: center;
+}
+
+/* english block */
+.panel2 ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.panel2 li {
+    margin: 10px 0;
+}
+
+.panel2 a {
+    text-decoration: none;
+    color: black;
+    font-size: 2rem;
+    transition: color 0.3s;
+}
+
+.panel2 a:hover {
+    color: #a88204; /* Gold color on hover */
+}
+
+.footer
+{
+    position:relative;
+    bottom:0rem;
+    display:flex;
+    margin:-9px;
+    flex-direction: column;
+    /* left:85%; */
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+
+
+
+.poemBox {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    border-radius: 5rem;
+    left: 25%; /* Center horizontally (100% - 50%) / 2 */
+    width: 50vw;
+    height: 95vh;
+    background-color: #f8f0a7;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 999;
+    overflow: scroll;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: 0.3s ease;
+    background-size: cover;
+    background-position: center;
+    background-image: url("resources/crumpled-paperboard.jpg");
+  }
+  .poemBox.wake
+  {
+    display: block;
+  }
+
+.poemContent {
+    padding: 20px;
+    font-size: 25px;
+    color: black;
+    display:block;
+    overflow-x: hidden;
+    overflow: scroll;
+  }
+  .poemContent.erase
+  {
+    display:none;
+  }
+.closeBtn {
+    position: absolute;
+    top: 15px;
+    right: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+
+  .closeBtn.close
+  {
+    display: none;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Black mask with 60% opacity */
+    z-index: 0;
+    display: none;
+}
+
+.overlay.dark {
+    display: block; /* Show overlay when 'dark' class is added */
+}
