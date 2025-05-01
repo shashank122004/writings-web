@@ -293,9 +293,10 @@ body.change
     font-size: 25px;
     color: black;
     display: block;
-    overflow-x: hidden;  /* Hide horizontal scroll */
-    overflow-y: auto;    /* Allow vertical scroll only */
-    word-wrap: break-word; /* Ensure long words break */
+    overflow-x: hidden;      /* Hide horizontal scroll */
+    overflow-y: auto;        /* Enable vertical scroll */
+    white-space: normal;     /* Allow line breaks */
+    word-break: break-word;  /* Breaks only when necessary, avoids mid-word breaks */
     width: 100%;
     box-sizing: border-box;
 }
