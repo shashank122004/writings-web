@@ -71,14 +71,13 @@ function display_poem(name)
 }
 // function for tywritter effect
 function typeWriter(element, text, delay = 30) {
-    element.innerText = ''; // Clear previous content
+    element.innerHTML = ''; // Clear previous content
     let i = 0;
+
     function typing() {
         if (i < text.length) {
             const char = text.charAt(i);
-            if (char === ' ') {
-                element.innerHTML += '&nbsp;';
-            } else if (char === '\n') {
+            if (char === '\n') {
                 element.innerHTML += '<br>';
             } else {
                 element.innerHTML += char;
