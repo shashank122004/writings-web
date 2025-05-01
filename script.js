@@ -56,6 +56,13 @@ t.addEventListener("click",(event)=>{
 
 function display_poem(name)
 {
+    shouldCancelTyping = false; // reset on each new display
+
+    let add = document.getElementById("poemContent");
+    add.classList.remove("erase"); // <-- This is the key line
+
+    // Show close button again (in case it's hidden)
+    document.getElementById("closeBtn").classList.remove("close");
     async function loadcontent()
     {
         let response=await fetch(`contents/${name}`);
@@ -75,6 +82,11 @@ function typeWriter(element, text, delay = 30) {
     let i = 0;
 
     function typing() {
+        if (shouldCancelTyping) 
+            {
+                document.getElementById('poemContent').innerHTML = '';
+                return;
+            }
         if (i < text.length) {
             const char = text.charAt(i);
             if (char === '\n') {
@@ -89,15 +101,28 @@ function typeWriter(element, text, delay = 30) {
     typing();
 }
 
-let c=document.getElementById("closeBtn")
-c.addEventListener("click",()=>{
-    let x=document.getElementById('overlay');
-    x.classList.toggle('overlay');
-    //toggle poem box
-    let y=document.getElementById('poemBox');
-    y.classList.toggle('poemBox');
-    let z=document.getElementById('poemContent');
-    z.classList.toggle('erase');
-    c.classList.toggle('close');
-    location.reload(); //refresh after every exection
-})
+// let c=document.getElementById("closeBtn")
+// c.addEventListener("click",()=>{
+//     let x=document.getElementById('overlay');
+//     x.classList.remove('overlay');
+//     //toggle poem box
+//     let y=document.getElementById('poemBox');
+//     y.classList.remove('poemBox');
+//     let z=document.getElementById('poemContent');
+//     z.classList.add('erase');
+//     c.classList.add('close');
+//     location.reload(); //refresh after every exection
+// })
+
+const c = document.getElementById("closeBtn");
+
+c.addEventListener("click", () => {
+    shouldCancelTyping = true;
+    document.getElementById('overlay').classList.remove('dark');
+    document.getElementById('poemBox').classList.remove('wake');
+    document.getElementById('poemContent').classList.add('erase');
+    c.classList.add('close');
+
+    // Optional: Clear previous poem content for next use
+    document.getElementById('poemContent').innerHTML = '';
+});
